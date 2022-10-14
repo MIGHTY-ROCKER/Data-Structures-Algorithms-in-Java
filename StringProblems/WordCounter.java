@@ -7,17 +7,19 @@ import java.util.Scanner;
 public class MyClass {
     static void count(String str){
         char[] a = str.toCharArray();
-        int count = 1 ;
+        int c = 0;
+        if(a[0] != ' ')
+            c = 1;
         for(int i = 0; i<a.length; i++){
-           if(a[i] == ' '){
-               count++;
+           if(a[i] == ' ' && a[i+1] != ' '){
+               c++;
            }
         }
-        System.out.print(count + " ");
+        System.out.println(c);
     }
     public static void main(String args[]) {
      Scanner input = new Scanner(System.in);
      String str = input.nextLine();
-     count(str);
+     c(str);
     }
 }
