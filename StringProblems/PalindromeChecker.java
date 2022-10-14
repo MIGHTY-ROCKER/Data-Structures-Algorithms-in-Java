@@ -1,4 +1,4 @@
-// Input: "Malayalam"
+// Input: "malayalam"
 // Output: Given Input is a Palindrome
 
 // Input: "Rocker"
