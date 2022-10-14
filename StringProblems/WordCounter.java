@@ -20,6 +20,6 @@ public class MyClass {
     public static void main(String args[]) {
      Scanner input = new Scanner(System.in);
      String str = input.nextLine();
-     c(str);
+     count(str);
     }
 }
