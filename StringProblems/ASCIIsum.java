@@ -1,11 +1,11 @@
-// ASCII value printer 
+// Sum of ASCII value of the characters in the given string
 // Input: Sundar
 // Output: 621
 
 
 import java.util.Scanner;
-public class MyClass {
-    static void vowellChecker(String str){
+public class ASCIIsum {
+    static void sumASCIIvalue(String str){
         char[] a = str.toCharArray();
         int sum = 0;
         for(int i = 0; i<a.length; i++){
@@ -17,6 +17,6 @@ public class MyClass {
     public static void main(String args[]) {
      Scanner input = new Scanner(System.in);
      String str = input.next();
-     vowellChecker(str);
+     sumASCIIvalue(str);
     }
 }
