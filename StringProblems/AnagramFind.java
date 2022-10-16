@@ -11,11 +11,19 @@
    Explanation:
     Both input String should have same elements but there is no need for same order.
    
-   Algorithm:
+   I've written two methods. One is done on traditional way and another one is done using StringBuilder.
+   
+   check1 Algorithm:
     Step1: Remove the spaces from the input words.
     Step2: Check for both input String's length -> if same: go to Step3, else: return false.
     Step3: Convert Strings to char array and sort it
-    Step4: if sorted array has same elements: it's anagram, else: return false.
+    Step4: if sorted array has same elements: it's Anagram, else: return false.
+   
+   check2 Algorithm:
+    Step1: Create a character array for 1st input string (s1)
+    Step2: Create a StringBuilder for 2md input string (s2)
+    Step3: Find and deleter the index of character in StringBuffer (sb) for each characters in character array c which is created from s1.
+    Step4: Finally after deleting all the relevent characters if the length of sb == 0, then its Anagrm. else return false.
     
 */
 
@@ -36,7 +44,7 @@ public class AnagramFind {
 			System.out.println("Given strings are not Anagram");
 	}
   
-	static boolean check(String s1, String s2) {
+	static boolean check1(String s1, String s2) {
     
 		if(s1.length() != s2.length()) {
 			return false;
@@ -69,4 +77,17 @@ public class AnagramFind {
     
 	}
   
+	static boolean check2(String s1, String s2){
+		char c[] = s1.toCharArray();
+		StringBuilder sb = new StringBuilder(s2);
+		for(char ch: c){
+			int index = sb.indexOf(String.valueOf(ch));
+			if(index != -1){
+				sb.deleteCharAt(index);
+			}
+			else
+				return false;
+		}
+		return sb.length() == 0;
+	}
 }
